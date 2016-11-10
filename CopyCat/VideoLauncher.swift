@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class VideoPlayerView: UIView {
     
@@ -14,6 +15,19 @@ class VideoPlayerView: UIView {
         super.init(frame: frame)
         
         backgroundColor = UIColor.black
+        
+        let urlString = "http://192.168.1.239/cry.mp4"
+        
+        if let url = URL(string: urlString) {
+            let player = AVPlayer(url:url)
+            
+            let playerLayer = AVPlayerLayer(player: player)
+            self.layer.addSublayer(playerLayer)
+            playerLayer.frame = self.frame
+            
+            player.play()
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

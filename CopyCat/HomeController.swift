@@ -91,7 +91,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func scrollToMenuIndex(menuIndex: Int) {
         let indexPath = IndexPath(item: menuIndex, section: 0)
         collectionView?.scrollToItem(at: indexPath, at:.left, animated: true)
-        
         setTitleForIndex(index: indexPath.item)
         
     }
